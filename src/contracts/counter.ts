@@ -42,7 +42,7 @@ export class Counter extends SmartContract {
         assert(this.checkSig(s, SigHashUtils.Gx))
 
         // Construct prev tx.
-        const opreturnScript = OpCode.OP_RETURN + Counter.writeCount(int2ByteString(count))  // TODO: Pushdata only!
+        const opreturnScript = OpCode.OP_RETURN + Counter.writeCount(int2ByteString(count))
         const opreturnOutput =
             Counter.ZEROSAT +
             int2ByteString(len(opreturnScript)) +
@@ -69,7 +69,7 @@ export class Counter extends SmartContract {
 
         // Increment counter.
         const newCount = count + 1n
-        const opreturnScriptNew = OpCode.OP_RETURN + Counter.writeCount(int2ByteString(newCount))  // TODO: Pushdata only!
+        const opreturnScriptNew = OpCode.OP_RETURN + Counter.writeCount(int2ByteString(newCount))
         const opreturnOutputNew =
             Counter.ZEROSAT +
             int2ByteString(len(opreturnScriptNew)) +
